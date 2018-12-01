@@ -40,4 +40,8 @@ Route::group(['middleware' => ['web']],function(){
         'as' => 'post.delete',
         'middleware'=>'auth'
     ]);
+
+    Route::post('/edit',function(\Illuminate\Http\Request $request){
+       return response()->json(['message'=>$request['postId']]);
+    })->name('edit');
 });
